@@ -8,7 +8,7 @@ const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 const DATABASE = process.env.DATABASE;
 const PORT = process.env.PORT || 8080;
 
-app.use(cors({origin:[BASE_URL]}))
+app.use(cors())
 app.use(express.json());//body parsing middleware
 
 mongoose.connect(DATABASE,{
