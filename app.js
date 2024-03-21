@@ -6,6 +6,7 @@ const calculatorRoutes = require('./apis/solarCalculator')
 const cors = require('cors');
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 const DATABASE = process.env.DATABASE;
+const PORT = process.env.PORT || 8080;
 
 app.use(cors({origin:[BASE_URL]}))
 app.use(express.json());//body parsing middleware
@@ -27,6 +28,6 @@ app.get('/hello' , (req,res)=>{
 app.use(calculatorRoutes);
 
 
-app.listen(8080 , ()=>{
+app.listen(PORT , ()=>{
     console.log("server connected at port 8080")
 })
